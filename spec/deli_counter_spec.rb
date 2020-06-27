@@ -7,8 +7,7 @@ describe 'Deli Counter' do
   describe "#line" do
     context "there is nobody in line" do
       it "should say the line is empty" do
-        # This line checks the current standard output (your terminal screen)
-        # to make sure the correct output has been puts'ed.
+
         expect($stdout).to receive(:puts).with("The line is currently empty.")
         line(katz_deli)
       end
@@ -38,8 +37,7 @@ describe 'Deli Counter' do
 
     context "there are already people in line" do
       it "should add a person to the end of the line" do
-        # This weird looking %w syntax is just another way to instantiate an
-        # Array. %w(item1 item2) is equivalent to ["item1", "item2"]
+   ["item1", "item2"]
         expect($stdout).to receive(:puts).with("Welcome, Grace. You are number 4 in line.")
         take_a_number(other_deli, "Grace")
         expect(other_deli).to eq(%w(Logan Avi Spencer Grace))
